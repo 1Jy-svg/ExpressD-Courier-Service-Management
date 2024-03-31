@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 export const firebaseConfig = {
 
-    apiKey: "your_key",
+    apiKey: "your_apikey",
   
     authDomain: "courier-service-manageme-891b4.firebaseapp.com",
   
