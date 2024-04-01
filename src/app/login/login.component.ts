@@ -46,10 +46,10 @@ export class LoginComponent implements OnInit {
         m.password==this.loginObj.password);
         if(isUserExist != undefined){
           alert('user Login succesfully');
-          this.router.navigate(['/']);
+          this.router.navigate(['/sidepane']);
         }
         else{
-          alert('Wrong credentials');
+          alert('NO USER EXIST!');
         }
   }
 
