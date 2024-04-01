@@ -21,8 +21,9 @@ export class LoginComponent implements OnInit {
     email:'',
     password:''
   };
+  
 
-  constructor(){}
+  constructor(private router: Router){}
   ngOnInit(): void {
     const localData=localStorage.getItem('signUpUsers');
     if(localData!= null){
@@ -37,12 +38,15 @@ export class LoginComponent implements OnInit {
         email:'',
         password:''
       };
+      this.router.navigate(['/login']);
+      
   }
   onlogin(){
       const isUserExist =this.signupUsers.find(m => m.username==this.loginObj.username && 
         m.password==this.loginObj.password);
         if(isUserExist != undefined){
           alert('user Login succesfully');
+          this.router.navigate(['/']);
         }
         else{
           alert('Wrong credentials');
