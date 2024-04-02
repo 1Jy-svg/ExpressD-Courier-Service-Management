@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
         email:'',
         password:''
       };
+      
       this.router.navigate(['/login']);
       
   }
@@ -45,11 +46,10 @@ export class LoginComponent implements OnInit {
       const isUserExist =this.signupUsers.find(m => m.username==this.loginObj.username && 
         m.password==this.loginObj.password);
         if(isUserExist != undefined){
-          alert('user Login succesfully');
           this.router.navigate(['/sidepane']);
         }
         else{
-          alert('NO USER EXIST!');
+          alert('Invalid username or password');
         }
   }
 
