@@ -1,0 +1,29 @@
+<h1>Dashboard</h1>
+<div class="container" id="container">
+    <!-- Dummy data -->
+    <div class="row" *ngFor="let item of items$ | async">
+        <div class="column">
+            <h2>Package ID</h2>
+            <p>ABC123</p>
+        </div>
+        <div class="column">
+            <h2>Sender Details</h2>
+            <p>Name: {{item.Sender_name}}</p>
+            <p>Email: {{item.Sender_email}}</p>
+            <p>Address: {{item.Sender_address}}</p>
+        </div>
+        <div class="column">
+            <h2>Receiver Details</h2>
+            <p>Name: {{item.Receiver_name}}</p>
+            <p>Email: {{item.Receiver_email}}</p>
+            <p>Address: {{item.Receiver_address}}</p>
+        </div>
+        <div class="column" style="display: flex; align-items: center; justify-content: center;">
+            <button onclick="redirectToPackageStatus('ABC123')">Check Status</button>
+        </div>
+    </div>
+    
+</div>
+
+    
+ 
