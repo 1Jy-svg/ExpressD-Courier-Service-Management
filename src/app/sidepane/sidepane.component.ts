@@ -46,4 +46,9 @@ onSubmit(){
   }
   this.addData();
 }
+
+isAdmin(){
+  let status = localStorage.getItem('adminStatus')
+  return true
+}
 }
