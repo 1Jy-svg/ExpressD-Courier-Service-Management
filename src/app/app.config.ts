@@ -10,6 +10,7 @@ import { getDatabase, provideDatabase , DatabaseModule} from '@angular/fire/data
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
+import { provideHttpClient } from '@angular/common/http';
 
 NgModule({
   imports:[FormsModule]
@@ -17,11 +18,13 @@ NgModule({
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withViewTransitions()),
+    provideHttpClient(),
     importProvidersFrom([
       provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
       provideAuth(() => getAuth()),
       provideFirestore(() => getFirestore()),
-      provideStorage(() => getStorage())
+      provideStorage(() => getStorage()),
+      
     ]),
   ],
 };
